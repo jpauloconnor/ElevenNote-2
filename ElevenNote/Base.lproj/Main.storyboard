@@ -13,6 +13,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for notes" id="7ec-jn-6nb">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notesCell" rowHeight="80" id="iRh-fp-czD" customClass="NoteTableViewCell" customModule="ElevenNote" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -60,10 +69,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="noteDate" destination="VsP-H7-o3g" id="UNz-fg-ATu"/>
+                                    <outlet property="customNoteText" destination="ANd-MH-EDU" id="1i8-Ma-sR6"/>
+                                    <outlet property="customNoteTitle" destination="O1u-jv-OUd" id="fob-0I-BpB"/>
+                                    <outlet property="noteDate" destination="VsP-H7-o3g" id="cl9-9F-0bv"/>
                                     <outlet property="noteText" destination="ANd-MH-EDU" id="fOk-YV-Maz"/>
                                     <outlet property="noteTitle" destination="O1u-jv-OUd" id="zvL-dl-2N6"/>
-                                    <segue destination="CzI-aW-cxt" kind="push" identifier="editNoteSegue" id="Hnz-qG-ihO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,12 +83,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="lzf-99-33A">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="H0m-YT-U3u">
+                            <connections>
+                                <action selector="signOut:" destination="yE5-N8-l3x" id="oLe-T0-3g7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PLk-1C-XkD">
                             <connections>
-                                <segue destination="CzI-aW-cxt" kind="push" identifier="addNoteSegue" id="h45-Yl-yam"/>
+                                <action selector="addNote:" destination="yE5-N8-l3x" id="AOX-76-JiW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="7ec-jn-6nb" id="GCm-ca-GP1"/>
+                        <segue destination="CzI-aW-cxt" kind="push" identifier="NotesToNoteDetail" id="Q17-lB-5Pd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2N-YO-CMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +147,7 @@
                     <navigationItem key="navigationItem" id="a5o-vt-nUf">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="3xA-9O-MGM">
                             <connections>
-                                <segue destination="d4v-fg-Upb" kind="unwind" unwindAction="saveNoteDetail:" id="qZg-j6-Yax"/>
+                                <action selector="saveButton:" destination="CzI-aW-cxt" id="6ze-W5-oIt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +157,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrI-7a-fjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="d4v-fg-Upb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="582" y="417"/>
         </scene>
@@ -241,7 +259,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hnz-qG-ihO"/>
-    </inferredMetricsTieBreakers>
 </document>

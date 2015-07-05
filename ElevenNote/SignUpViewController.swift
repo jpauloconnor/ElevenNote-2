@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -58,8 +60,8 @@ class SignUpViewController: UIViewController {
             } else {
                 self.activityIndicator.stopAnimating()
                 
-                if let message: AnyObject = error!userInfo!["error"] {
-                    self.message.text = "\(message)"
+                if let topMessage: AnyObject = error!.userInfo!["error"] {
+                    self.topMessage.text = "\(topMessage)"
                     
                 }
             }
