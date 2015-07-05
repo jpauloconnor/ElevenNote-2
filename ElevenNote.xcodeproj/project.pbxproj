@@ -23,6 +23,7 @@
 		5DDE8AA21B48EAD100B4EAAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */; };
 		5DDE8AA41B48EADE00B4EAAB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA31B48EADE00B4EAAB /* libz.dylib */; };
 		5DDE8AA61B48EAEB00B4EAAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */; };
+		5DDE8AA81B48F0AB00B4EAAB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDE8AA71B48F0AB00B4EAAB /* SignUpViewController.swift */; };
 		F1BEBD971B1B3FED001E5C7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBD961B1B3FED001E5C7C /* AppDelegate.swift */; };
 		F1BEBD9C1B1B3FED001E5C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BEBD9A1B1B3FED001E5C7C /* Main.storyboard */; };
 		F1BEBD9E1B1B3FED001E5C7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BEBD9D1B1B3FED001E5C7C /* Images.xcassets */; };
@@ -61,6 +62,7 @@
 		5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5DDE8AA31B48EADE00B4EAAB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5DDE8AA71B48F0AB00B4EAAB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F1BEBD911B1B3FED001E5C7C /* ElevenNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BEBD951B1B3FED001E5C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1BEBD961B1B3FED001E5C7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				F1BEBDB61B1B457F001E5C7C /* NotesTableViewController.swift */,
 				F1BEBDBE1B1B7862001E5C7C /* NotesDetailViewController.swift */,
 				F1BEBDBC1B1B54C2001E5C7C /* NoteTableViewCell.swift */,
+				5DDE8AA71B48F0AB00B4EAAB /* SignUpViewController.swift */,
 			);
 			path = ElevenNote;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				F1BEBDB71B1B457F001E5C7C /* NotesTableViewController.swift in Sources */,
 				F1BEBDBF1B1B7862001E5C7C /* NotesDetailViewController.swift in Sources */,
 				F1BEBDBD1B1B54C2001E5C7C /* NoteTableViewCell.swift in Sources */,
+				5DDE8AA81B48F0AB00B4EAAB /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
