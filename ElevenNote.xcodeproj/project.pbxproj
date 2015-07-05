@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DDE8A8D1B48EA4D00B4EAAB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A871B48EA4D00B4EAAB /* Bolts.framework */; };
+		5DDE8A8E1B48EA4D00B4EAAB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A881B48EA4D00B4EAAB /* ParseCrashReporting.framework */; };
+		5DDE8A8F1B48EA4D00B4EAAB /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A891B48EA4D00B4EAAB /* ParseUI.framework */; };
+		5DDE8A901B48EA4D00B4EAAB /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A8A1B48EA4D00B4EAAB /* ParseFacebookUtilsV4.framework */; };
+		5DDE8A911B48EA4D00B4EAAB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A8B1B48EA4D00B4EAAB /* ParseFacebookUtils.framework */; };
+		5DDE8A921B48EA4D00B4EAAB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A8C1B48EA4D00B4EAAB /* Parse.framework */; };
+		5DDE8A941B48EA8C00B4EAAB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A931B48EA8C00B4EAAB /* AudioToolbox.framework */; };
+		5DDE8A961B48EA9300B4EAAB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A951B48EA9300B4EAAB /* CFNetwork.framework */; };
+		5DDE8A981B48EA9B00B4EAAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A971B48EA9B00B4EAAB /* CoreGraphics.framework */; };
+		5DDE8A9A1B48EAA600B4EAAB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A991B48EAA600B4EAAB /* MobileCoreServices.framework */; };
+		5DDE8A9C1B48EAAE00B4EAAB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A9B1B48EAAE00B4EAAB /* QuartzCore.framework */; };
+		5DDE8A9E1B48EAB700B4EAAB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A9D1B48EAB700B4EAAB /* Security.framework */; };
+		5DDE8AA01B48EAC000B4EAAB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A9F1B48EAC000B4EAAB /* StoreKit.framework */; };
+		5DDE8AA21B48EAD100B4EAAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */; };
+		5DDE8AA41B48EADE00B4EAAB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA31B48EADE00B4EAAB /* libz.dylib */; };
+		5DDE8AA61B48EAEB00B4EAAB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */; };
+		F1BEBD971B1B3FED001E5C7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBD961B1B3FED001E5C7C /* AppDelegate.swift */; };
+		F1BEBD9C1B1B3FED001E5C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BEBD9A1B1B3FED001E5C7C /* Main.storyboard */; };
+		F1BEBD9E1B1B3FED001E5C7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BEBD9D1B1B3FED001E5C7C /* Images.xcassets */; };
+		F1BEBDA11B1B3FED001E5C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BEBD9F1B1B3FED001E5C7C /* LaunchScreen.xib */; };
+		F1BEBDAD1B1B3FED001E5C7C /* ElevenNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBDAC1B1B3FED001E5C7C /* ElevenNoteTests.swift */; };
+		F1BEBDB71B1B457F001E5C7C /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBDB61B1B457F001E5C7C /* NotesTableViewController.swift */; };
+		F1BEBDBD1B1B54C2001E5C7C /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBDBC1B1B54C2001E5C7C /* NoteTableViewCell.swift */; };
+		F1BEBDBF1B1B7862001E5C7C /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEBDBE1B1B7862001E5C7C /* NotesDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1BEBDA71B1B3FED001E5C7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1BEBD891B1B3FED001E5C7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1BEBD901B1B3FED001E5C7C;
+			remoteInfo = ElevenNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5DDE8A861B48E9F700B4EAAB /* ElevenNote-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ElevenNote-Bridging-Header.h"; sourceTree = "<group>"; };
+		5DDE8A871B48EA4D00B4EAAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5DDE8A881B48EA4D00B4EAAB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		5DDE8A891B48EA4D00B4EAAB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		5DDE8A8A1B48EA4D00B4EAAB /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		5DDE8A8B1B48EA4D00B4EAAB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		5DDE8A8C1B48EA4D00B4EAAB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		5DDE8A931B48EA8C00B4EAAB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5DDE8A951B48EA9300B4EAAB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5DDE8A971B48EA9B00B4EAAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5DDE8A991B48EAA600B4EAAB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5DDE8A9B1B48EAAE00B4EAAB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5DDE8A9D1B48EAB700B4EAAB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5DDE8A9F1B48EAC000B4EAAB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5DDE8AA31B48EADE00B4EAAB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F1BEBD911B1B3FED001E5C7C /* ElevenNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BEBD951B1B3FED001E5C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BEBD961B1B3FED001E5C7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1BEBD9B1B1B3FED001E5C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1BEBD9D1B1B3FED001E5C7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F1BEBDA01B1B3FED001E5C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F1BEBDA61B1B3FED001E5C7C /* ElevenNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElevenNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BEBDAB1B1B3FED001E5C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BEBDAC1B1B3FED001E5C7C /* ElevenNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenNoteTests.swift; sourceTree = "<group>"; };
+		F1BEBDB61B1B457F001E5C7C /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		F1BEBDBC1B1B54C2001E5C7C /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		F1BEBDBE1B1B7862001E5C7C /* NotesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1BEBD8E1B1B3FED001E5C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDE8AA61B48EAEB00B4EAAB /* libsqlite3.dylib in Frameworks */,
+				5DDE8AA41B48EADE00B4EAAB /* libz.dylib in Frameworks */,
+				5DDE8AA21B48EAD100B4EAAB /* SystemConfiguration.framework in Frameworks */,
+				5DDE8AA01B48EAC000B4EAAB /* StoreKit.framework in Frameworks */,
+				5DDE8A9E1B48EAB700B4EAAB /* Security.framework in Frameworks */,
+				5DDE8A9C1B48EAAE00B4EAAB /* QuartzCore.framework in Frameworks */,
+				5DDE8A9A1B48EAA600B4EAAB /* MobileCoreServices.framework in Frameworks */,
+				5DDE8A981B48EA9B00B4EAAB /* CoreGraphics.framework in Frameworks */,
+				5DDE8A961B48EA9300B4EAAB /* CFNetwork.framework in Frameworks */,
+				5DDE8A941B48EA8C00B4EAAB /* AudioToolbox.framework in Frameworks */,
+				5DDE8A8F1B48EA4D00B4EAAB /* ParseUI.framework in Frameworks */,
+				5DDE8A8D1B48EA4D00B4EAAB /* Bolts.framework in Frameworks */,
+				5DDE8A901B48EA4D00B4EAAB /* ParseFacebookUtilsV4.framework in Frameworks */,
+				5DDE8A911B48EA4D00B4EAAB /* ParseFacebookUtils.framework in Frameworks */,
+				5DDE8A921B48EA4D00B4EAAB /* Parse.framework in Frameworks */,
+				5DDE8A8E1B48EA4D00B4EAAB /* ParseCrashReporting.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BEBDA31B1B3FED001E5C7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DDE8A851B48E9C000B4EAAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */,
+				5DDE8AA31B48EADE00B4EAAB /* libz.dylib */,
+				5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */,
+				5DDE8A9F1B48EAC000B4EAAB /* StoreKit.framework */,
+				5DDE8A9D1B48EAB700B4EAAB /* Security.framework */,
+				5DDE8A9B1B48EAAE00B4EAAB /* QuartzCore.framework */,
+				5DDE8A991B48EAA600B4EAAB /* MobileCoreServices.framework */,
+				5DDE8A971B48EA9B00B4EAAB /* CoreGraphics.framework */,
+				5DDE8A951B48EA9300B4EAAB /* CFNetwork.framework */,
+				5DDE8A931B48EA8C00B4EAAB /* AudioToolbox.framework */,
+				5DDE8A861B48E9F700B4EAAB /* ElevenNote-Bridging-Header.h */,
+				5DDE8A871B48EA4D00B4EAAB /* Bolts.framework */,
+				5DDE8A881B48EA4D00B4EAAB /* ParseCrashReporting.framework */,
+				5DDE8A891B48EA4D00B4EAAB /* ParseUI.framework */,
+				5DDE8A8A1B48EA4D00B4EAAB /* ParseFacebookUtilsV4.framework */,
+				5DDE8A8B1B48EA4D00B4EAAB /* ParseFacebookUtils.framework */,
+				5DDE8A8C1B48EA4D00B4EAAB /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1BEBD881B1B3FED001E5C7C = {
+			isa = PBXGroup;
+			children = (
+				5DDE8A851B48E9C000B4EAAB /* Frameworks */,
+				F1BEBD931B1B3FED001E5C7C /* ElevenNote */,
+				F1BEBDA91B1B3FED001E5C7C /* ElevenNoteTests */,
+				F1BEBD921B1B3FED001E5C7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1BEBD921B1B3FED001E5C7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1BEBD911B1B3FED001E5C7C /* ElevenNote.app */,
+				F1BEBDA61B1B3FED001E5C7C /* ElevenNoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1BEBD931B1B3FED001E5C7C /* ElevenNote */ = {
+			isa = PBXGroup;
+			children = (
+				F1BEBD961B1B3FED001E5C7C /* AppDelegate.swift */,
+				F1BEBD9A1B1B3FED001E5C7C /* Main.storyboard */,
+				F1BEBD9D1B1B3FED001E5C7C /* Images.xcassets */,
+				F1BEBD9F1B1B3FED001E5C7C /* LaunchScreen.xib */,
+				F1BEBD941B1B3FED001E5C7C /* Supporting Files */,
+				F1BEBDB61B1B457F001E5C7C /* NotesTableViewController.swift */,
+				F1BEBDBE1B1B7862001E5C7C /* NotesDetailViewController.swift */,
+				F1BEBDBC1B1B54C2001E5C7C /* NoteTableViewCell.swift */,
+			);
+			path = ElevenNote;
+			sourceTree = "<group>";
+		};
+		F1BEBD941B1B3FED001E5C7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1BEBD951B1B3FED001E5C7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1BEBDA91B1B3FED001E5C7C /* ElevenNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1BEBDAC1B1B3FED001E5C7C /* ElevenNoteTests.swift */,
+				F1BEBDAA1B1B3FED001E5C7C /* Supporting Files */,
+			);
+			path = ElevenNoteTests;
+			sourceTree = "<group>";
+		};
+		F1BEBDAA1B1B3FED001E5C7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1BEBDAB1B1B3FED001E5C7C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1BEBD901B1B3FED001E5C7C /* ElevenNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BEBDB01B1B3FED001E5C7C /* Build configuration list for PBXNativeTarget "ElevenNote" */;
+			buildPhases = (
+				F1BEBD8D1B1B3FED001E5C7C /* Sources */,
+				F1BEBD8E1B1B3FED001E5C7C /* Frameworks */,
+				F1BEBD8F1B1B3FED001E5C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ElevenNote;
+			productName = ElevenNote;
+			productReference = F1BEBD911B1B3FED001E5C7C /* ElevenNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1BEBDA51B1B3FED001E5C7C /* ElevenNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BEBDB31B1B3FED001E5C7C /* Build configuration list for PBXNativeTarget "ElevenNoteTests" */;
+			buildPhases = (
+				F1BEBDA21B1B3FED001E5C7C /* Sources */,
+				F1BEBDA31B1B3FED001E5C7C /* Frameworks */,
+				F1BEBDA41B1B3FED001E5C7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1BEBDA81B1B3FED001E5C7C /* PBXTargetDependency */,
+			);
+			name = ElevenNoteTests;
+			productName = ElevenNoteTests;
+			productReference = F1BEBDA61B1B3FED001E5C7C /* ElevenNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1BEBD891B1B3FED001E5C7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Brett Keck";
+				TargetAttributes = {
+					F1BEBD901B1B3FED001E5C7C = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = REU9X5P35V;
+					};
+					F1BEBDA51B1B3FED001E5C7C = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = F1BEBD901B1B3FED001E5C7C;
+					};
+				};
+			};
+			buildConfigurationList = F1BEBD8C1B1B3FED001E5C7C /* Build configuration list for PBXProject "ElevenNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1BEBD881B1B3FED001E5C7C;
+			productRefGroup = F1BEBD921B1B3FED001E5C7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1BEBD901B1B3FED001E5C7C /* ElevenNote */,
+				F1BEBDA51B1B3FED001E5C7C /* ElevenNoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1BEBD8F1B1B3FED001E5C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BEBD9C1B1B3FED001E5C7C /* Main.storyboard in Resources */,
+				F1BEBDA11B1B3FED001E5C7C /* LaunchScreen.xib in Resources */,
+				F1BEBD9E1B1B3FED001E5C7C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BEBDA41B1B3FED001E5C7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1BEBD8D1B1B3FED001E5C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BEBD971B1B3FED001E5C7C /* AppDelegate.swift in Sources */,
+				F1BEBDB71B1B457F001E5C7C /* NotesTableViewController.swift in Sources */,
+				F1BEBDBF1B1B7862001E5C7C /* NotesDetailViewController.swift in Sources */,
+				F1BEBDBD1B1B54C2001E5C7C /* NoteTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BEBDA21B1B3FED001E5C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BEBDAD1B1B3FED001E5C7C /* ElevenNoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1BEBDA81B1B3FED001E5C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1BEBD901B1B3FED001E5C7C /* ElevenNote */;
+			targetProxy = F1BEBDA71B1B3FED001E5C7C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F1BEBD9A1B1B3FED001E5C7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BEBD9B1B1B3FED001E5C7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1BEBD9F1B1B3FED001E5C7C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BEBDA01B1B3FED001E5C7C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1BEBDAE1B1B3FED001E5C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F1BEBDAF1B1B3FED001E5C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1BEBDB11B1B3FED001E5C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ElevenNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "380c9284-2477-48be-890c-72e3e6551d43";
+				SWIFT_OBJC_BRIDGING_HEADER = "ElevenNote-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		F1BEBDB21B1B3FED001E5C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eleven Fifty, LLC (REU9X5P35V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eleven Fifty, LLC (REU9X5P35V)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ElevenNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "380c9284-2477-48be-890c-72e3e6551d43";
+				SWIFT_OBJC_BRIDGING_HEADER = "ElevenNote-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F1BEBDB41B1B3FED001E5C7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ElevenNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElevenNote.app/ElevenNote";
+			};
+			name = Debug;
+		};
+		F1BEBDB51B1B3FED001E5C7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ElevenNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElevenNote.app/ElevenNote";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1BEBD8C1B1B3FED001E5C7C /* Build configuration list for PBXProject "ElevenNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BEBDAE1B1B3FED001E5C7C /* Debug */,
+				F1BEBDAF1B1B3FED001E5C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BEBDB01B1B3FED001E5C7C /* Build configuration list for PBXNativeTarget "ElevenNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BEBDB11B1B3FED001E5C7C /* Debug */,
+				F1BEBDB21B1B3FED001E5C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BEBDB31B1B3FED001E5C7C /* Build configuration list for PBXNativeTarget "ElevenNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BEBDB41B1B3FED001E5C7C /* Debug */,
+				F1BEBDB51B1B3FED001E5C7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1BEBD891B1B3FED001E5C7C /* Project object */;
+}
