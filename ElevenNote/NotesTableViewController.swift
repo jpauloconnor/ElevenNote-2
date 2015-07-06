@@ -2,13 +2,13 @@
 //  NotesTableViewController.swift
 //  ElevenNote
 //
-//  Created by Brett Keck on 5/31/15.
+//  Created by Paul O'Connor on 5/31/15.
 //  Copyright (c) 2015 Brett Keck. All rights reserved.
-//
+// Tutorials used: Vea Software, 
 
 import UIKit
 
-class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
+class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate {
     
     // Sign the user out
     @IBAction func signOut(sender: AnyObject) {
@@ -24,6 +24,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
     
     @IBAction func addNote(sender: AnyObject) {
         
+    // Force reload data function to run on the main thread.
         dispatch_async(dispatch_get_main_queue()){
             self.performSegueWithIdentifier("notesToDetail", sender: self)
             
@@ -33,6 +34,8 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    //Initialize the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!){
         super.init(style: style, className: className)
     }
@@ -42,17 +45,17 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
         
         //configure the PFQueryTableView
         self.parseClassName = "Note"
-        self.textKey = "title"
+        self.textKey = "noteTitle"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("notesCell") as! NoteTableViewCell!
+        var cell = tableView.dequeueReusableCellWithIdentifier("NotesCell") as! NoteTableViewCell!
         
         if cell == nil {
-            cell = NoteTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "notesCell")
+            cell = NoteTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "NotesCell")
         }
         
         //Extract values from the PFObject to display in the the table cell
@@ -81,7 +84,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
        
         }
     }
-    // Define teh query that will provide the data for the table view
+    // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         
         // Start the query object
@@ -94,7 +97,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
             
         }
         // Order the results
-        query.orderByAscending("title")
+        query.orderByDescending("noteTitle")
         
         // Return the query object
         return query

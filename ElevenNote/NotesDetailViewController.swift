@@ -51,6 +51,8 @@ class NotesDetailViewController: UIViewController {
             var searchText = (noteTitle.text + " " + noteText.text + " ").lowercaseString
             updateObject["searchText"] = searchText
             
+            // This makes the user's info private. 
+            
             updateObject.ACL = PFACL(user: PFUser.currentUser()!)
             
             //Save the data back to the server in a background task.
