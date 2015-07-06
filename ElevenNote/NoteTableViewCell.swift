@@ -14,6 +14,6 @@ class NoteTableViewCell: PFTableViewCell {
     
     @IBOutlet weak var customNoteText: UILabel!
     
-    @IBOutlet weak var noteDate: UILabel!
+    
 }
 

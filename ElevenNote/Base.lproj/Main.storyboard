@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Notes-->
+        <!--Notes Table View Controller-->
         <scene sceneID="NPe-UE-HpI">
             <objects>
                 <tableViewController id="yE5-N8-l3x" customClass="NotesTableViewController" customModule="ElevenNote" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,13 +23,13 @@
                             </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notesCell" rowHeight="80" id="iRh-fp-czD" customClass="NoteTableViewCell" customModule="ElevenNote" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="notesCell" rowHeight="80" id="iRh-fp-czD" customClass="NoteTableViewCell" customModule="ElevenNote" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iRh-fp-czD" id="tVS-c5-tRf">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-jv-OUd">
-                                            <rect key="frame" x="8" y="8" width="232" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="32" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="UJG-vW-60q"/>
                                             </constraints>
@@ -38,7 +38,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANd-MH-EDU">
-                                            <rect key="frame" x="8" y="50" width="304" height="21"/>
+                                            <rect key="frame" x="8" y="50" width="271" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="KN1-uq-guD"/>
                                             </constraints>
@@ -46,34 +46,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/20/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsP-H7-o3g">
-                                            <rect key="frame" x="248" y="8" width="64" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="64" id="AGM-6H-jXh"/>
-                                                <constraint firstAttribute="height" constant="15" id="P7d-uQ-3gz"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.099565748547820077" green="0.60910475462377078" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="O1u-jv-OUd" firstAttribute="top" secondItem="tVS-c5-tRf" secondAttribute="topMargin" id="HMS-Tu-p6Z"/>
-                                        <constraint firstItem="VsP-H7-o3g" firstAttribute="trailing" secondItem="tVS-c5-tRf" secondAttribute="trailingMargin" id="L7d-c2-n5D"/>
                                         <constraint firstItem="O1u-jv-OUd" firstAttribute="leading" secondItem="tVS-c5-tRf" secondAttribute="leadingMargin" id="eJG-wG-qmd"/>
                                         <constraint firstItem="ANd-MH-EDU" firstAttribute="leading" secondItem="tVS-c5-tRf" secondAttribute="leadingMargin" id="g1l-2j-G8R"/>
                                         <constraint firstItem="ANd-MH-EDU" firstAttribute="trailing" secondItem="tVS-c5-tRf" secondAttribute="trailingMargin" id="q3b-TG-jQ7"/>
-                                        <constraint firstItem="VsP-H7-o3g" firstAttribute="leading" secondItem="O1u-jv-OUd" secondAttribute="trailing" constant="8" id="shN-AY-wZx"/>
-                                        <constraint firstItem="VsP-H7-o3g" firstAttribute="top" secondItem="tVS-c5-tRf" secondAttribute="topMargin" id="v65-LZ-uaI"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ANd-MH-EDU" secondAttribute="bottom" constant="0.5" id="yMb-wk-yca"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="customNoteText" destination="ANd-MH-EDU" id="1i8-Ma-sR6"/>
                                     <outlet property="customNoteTitle" destination="O1u-jv-OUd" id="fob-0I-BpB"/>
-                                    <outlet property="noteDate" destination="VsP-H7-o3g" id="cl9-9F-0bv"/>
-                                    <outlet property="noteText" destination="ANd-MH-EDU" id="fOk-YV-Maz"/>
-                                    <outlet property="noteTitle" destination="O1u-jv-OUd" id="zvL-dl-2N6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,7 +66,7 @@
                             <outlet property="delegate" destination="yE5-N8-l3x" id="Gyt-51-gR5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="lzf-99-33A">
+                    <navigationItem key="navigationItem" id="lzf-99-33A">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="H0m-YT-U3u">
                             <connections>
                                 <action selector="signOut:" destination="yE5-N8-l3x" id="oLe-T0-3g7"/>
@@ -90,13 +74,13 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PLk-1C-XkD">
                             <connections>
-                                <action selector="addNote:" destination="yE5-N8-l3x" id="AOX-76-JiW"/>
+                                <action selector="addNote:" destination="yE5-N8-l3x" id="H4V-nv-ruf"/>
+                                <segue destination="CzI-aW-cxt" kind="push" id="7qj-tG-N4Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="7ec-jn-6nb" id="GCm-ca-GP1"/>
-                        <segue destination="CzI-aW-cxt" kind="push" identifier="NotesToNoteDetail" id="Q17-lB-5Pd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2N-YO-CMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +147,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="v3p-5M-vxE">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" id="iDQ-CG-h8D" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="iDQ-CG-h8D" customClass="SignUpViewController" customModule="ElevenNote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ni-A0-6Oy"/>
                         <viewControllerLayoutGuide type="bottom" id="4gy-Dr-wPZ"/>
@@ -172,11 +156,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-Sa-dpK">
-                                <rect key="frame" x="36" y="132" width="260" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4Z-K6-o4F">
                                 <rect key="frame" x="36" y="234" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -221,6 +200,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-Sa-dpK">
+                                <rect key="frame" x="36" y="132" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -229,7 +213,7 @@
                         <outlet property="emailAddress" destination="0N7-Sa-dpK" id="NbH-BO-3Nh"/>
                         <outlet property="password" destination="M4Z-K6-o4F" id="dAr-qN-yKi"/>
                         <outlet property="topMessage" destination="Sed-cI-F45" id="Liz-Dp-iBp"/>
-                        <segue destination="jve-N0-IBr" kind="push" identifier="signinSegue" id="L87-t4-YEP"/>
+                        <segue destination="jve-N0-IBr" kind="push" identifier="signInSegue" id="L87-t4-YEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66Q-cO-WkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
