@@ -85,7 +85,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2N-YO-CMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="417"/>
+            <point key="canvasLocation" x="689" y="417"/>
         </scene>
         <!--Notes Detail View Controller-->
         <scene sceneID="tcj-eB-6iN">
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrI-7a-fjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="417"/>
+            <point key="canvasLocation" x="1114" y="417"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="v3p-5M-vxE">
@@ -194,31 +194,32 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1p0-xl-idh">
                                 <rect key="frame" x="150" y="304" width="20" height="20"/>
                             </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-Sa-dpK">
+                                <rect key="frame" x="36" y="132" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sed-cI-F45">
                                 <rect key="frame" x="36" y="28" width="260" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-Sa-dpK">
-                                <rect key="frame" x="36" y="132" width="260" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dR2-pH-dud"/>
                     <connections>
                         <outlet property="activityIndicator" destination="1p0-xl-idh" id="8yP-4j-4Vp"/>
                         <outlet property="emailAddress" destination="0N7-Sa-dpK" id="NbH-BO-3Nh"/>
                         <outlet property="password" destination="M4Z-K6-o4F" id="dAr-qN-yKi"/>
                         <outlet property="topMessage" destination="Sed-cI-F45" id="Liz-Dp-iBp"/>
-                        <segue destination="jve-N0-IBr" kind="push" identifier="signInSegue" id="L87-t4-YEP"/>
+                        <segue destination="jve-N0-IBr" kind="modal" identifier="signInSegue" id="L87-t4-YEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66Q-cO-WkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-673" y="417"/>
+            <point key="canvasLocation" x="-298" y="417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bpE-Ib-FPl">
@@ -235,7 +236,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asC-wT-oDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="417.48000000000002"/>
+            <point key="canvasLocation" x="252" y="417"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

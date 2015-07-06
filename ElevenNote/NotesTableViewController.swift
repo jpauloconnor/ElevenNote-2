@@ -81,7 +81,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
        
         }
     }
-        
+    // Define teh query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         
         // Start the query object

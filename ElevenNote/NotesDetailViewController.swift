@@ -17,16 +17,7 @@ class NotesDetailViewController: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteText: UITextView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let object = currentObject {
-            
-            noteTitle.text = object["title"] as? String
-            noteText.text = object["text"] as? String
-        }
-    }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,31 +30,48 @@ class NotesDetailViewController: UIViewController {
         if let updateObject = currentObject as PFObject? {
             
             // Update the existing Parse object
-            updateObject["title"] = noteTitle.text
-            updateObject["text"] = noteText.text
+            updateObject["noteTitle"] = noteTitle.text
+            updateObject["noteText"] = noteText.text
             
             // Create a string of text that is used by search capabilities.
             
             var searchText = (noteTitle.text + " " + noteText.text + " ").lowercaseString
             updateObject["searchText"] = searchText
-            updateObject.saveEventually(nil)
+            updateObject.saveEventually()
             
             
         } else {
+            // Create a new parse object.
             var updateObject = PFObject(className: "Note")
             
-            updateObject["title"] = noteTitle.text
-            updateObject["text"] = noteText.text
+            updateObject["noteTitle"] = noteTitle.text
+            updateObject["noteText"] = noteText.text
             
+            //Create a string of text that is used by search capabilities.
             var searchText = (noteTitle.text + " " + noteText.text + " ").lowercaseString
             updateObject["searchText"] = searchText
             
             updateObject.ACL = PFACL(user: PFUser.currentUser()!)
-            updateObject.saveEventually(nil)
+            
+            //Save the data back to the server in a background task.
+            updateObject.saveEventually()
             
         }
-    
+        //Return to table view.
      self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Unwrap the current object object
+        
+        if let object = currentObject {
+            
+            noteTitle.text = object["noteTitle"] as? String
+            noteText.text = object["noteText"] as? String
+        }
+    }
+
 }
 
