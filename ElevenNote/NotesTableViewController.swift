@@ -16,6 +16,10 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         super.viewDidLoad()
     }
     
+    @IBAction func editNote(sender: AnyObject) {
+        
+        
+    }
 //    // Sign the user out
 //    @IBAction func signOut(sender: AnyObject) {
 //    
@@ -30,7 +34,7 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
     
     @IBAction func addNote(sender: AnyObject) {
         
-    // Force reload data function to run on the main thread.
+    // Force reload data function to run on the main thread.  Makes the notes private?
         dispatch_async(dispatch_get_main_queue()){
             self.performSegueWithIdentifier("notesToDetail", sender: self)
             
@@ -178,21 +182,35 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         super.init(coder: aDecoder)
         
         //configure the PFQueryTableView
+        //not sure about the date yet.
         self.parseClassName = "Note"
         self.textKey = "noteTitle"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
+        
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("NotesCell") as! NoteTableViewCell!
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("NotesCell") as! NoteTableViewCell!
         
         if cell == nil {
             cell = NoteTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "NotesCell")
         }
         
+//        let data = object as! Note
+//        cell.note = data
+//        let dateUpdated = data.updatedAt
+//        var dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//
+//        let dateString = dateFormatter.stringFromDate(dateUpdated!)
+//        
+//        cell.noteDate.text = dateString  //data.NoteDate
+        
         //Extract values from the PFObject to display in the table cell
+        
         
         if let noteTitle = object?["noteTitle"] as? String {
             cell.customNoteTitle.text = noteTitle
@@ -242,7 +260,7 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         
         //Dismiss the keyboard
         searchBar.resignFirstResponder()
-        
+        println("text ended editing")
         // Force reload of table data.
         self.loadObjects()
     }
@@ -251,7 +269,7 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         
         // Dismiss the keyboard
         searchBar.resignFirstResponder()
-        
+        println("Button clicked")
         // Force reload of table data
         self.loadObjects()
     }

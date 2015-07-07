@@ -46,6 +46,7 @@ class NotesDetailViewController: UIViewController {
             updateObject["noteTitle"] = noteTitle.text
             updateObject["noteText"] = noteText.text
             
+            
             //Create a string of text that is used by search capabilities.
             var searchText = (noteTitle.text + " " + noteText.text + " ").lowercaseString
             updateObject["searchText"] = searchText
@@ -71,6 +72,7 @@ class NotesDetailViewController: UIViewController {
             
             noteTitle.text = object["noteTitle"] as! String
             noteText.text = object["noteText"] as! String
+            
         }
     }
 

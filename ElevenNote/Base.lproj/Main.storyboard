@@ -46,6 +46,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/20/2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgj-IY-3Rh">
+                                            <rect key="frame" x="245" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="O1u-jv-OUd" firstAttribute="top" secondItem="tVS-c5-tRf" secondAttribute="topMargin" id="HMS-Tu-p6Z"/>
@@ -58,6 +64,7 @@
                                 <connections>
                                     <outlet property="customNoteText" destination="ANd-MH-EDU" id="1i8-Ma-sR6"/>
                                     <outlet property="customNoteTitle" destination="O1u-jv-OUd" id="fob-0I-BpB"/>
+                                    <outlet property="noteDate" destination="Cgj-IY-3Rh" id="GeB-8V-jmd"/>
                                     <segue destination="CzI-aW-cxt" kind="push" identifier="editNoteSegue" id="HUi-ES-Fwh"/>
                                 </connections>
                             </tableViewCell>
@@ -68,7 +75,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lzf-99-33A">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="H0m-YT-U3u"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PLk-1C-XkD">
                             <connections>
                                 <action selector="addNote:" destination="yE5-N8-l3x" id="H4V-nv-ruf"/>

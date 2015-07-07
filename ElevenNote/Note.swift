@@ -8,33 +8,36 @@
 
 import UIKit
 
-let NoteStoreInstance = Note()
 
 class Note: PFObject, PFSubclassing {
     class func parseClassName() -> String {
         return "Note"
     }
-    class var sharedInstance : Note {
-        return NoteStoreInstance
-    }
-    var title : String {
-        get {
-            return objectForKey("title") as! String
-        }
-        set {
-            setObject(newValue, forKey: "title")
-        }
-    }
-    var text : String {
-        get {
-            return objectForKey("text") as! String
-        }
-        set {
-            setObject(newValue, forKey: "text")
-        }
-    }
+//    class var sharedInstance : Note {
+//        return NoteStoreInstance
+//    }
+//    var title : String {
+//        get {
+//            return objectForKey("title") as! String
+//        }
+//        set {
+//            setObject(newValue, forKey: "title")
+//        }
+//    }
+//    var text : String {
+//        get {
+//            return objectForKey("text") as! String
+//        }
+//        set {
+//            setObject(newValue, forKey: "text")
+//        }
+//    }
+    @NSManaged var title : String
+    @NSManaged var text : String
     @NSManaged var user : PFUser
-    
+    @NSManaged var date : NSDate
+
 }
+
 
 
