@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate {
+class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
     
     // Sign the user out
     @IBAction func signOut(sender: AnyObject) {
@@ -16,7 +16,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate 
         PFUser.logOut()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("NotesTableViewController") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
 
@@ -30,6 +30,9 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate 
             
         }
     }
+    
+    
+    
     //Table search bar
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -70,20 +73,20 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate 
         
         return cell
 }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         //get the new view controller using [segue destinationViewController
         var detailScene = segue.destinationViewController as! NotesDetailViewController
-    
+        
         // Pass the selected object to the destination view controller.
-   
-    if let indexPath = self.tableView.indexPathForSelectedRow() {
-        let row = Int(indexPath.row)
-        detailScene.currentObject = objects?[row] as? PFObject
-       
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            let row = Int(indexPath.row)
+            detailScene.currentObject = objects?[row] as? PFObject
+            
         }
     }
+
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         
@@ -97,7 +100,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate 
             
         }
         // Order the results
-        query.orderByDescending("noteTitle")
+        query.orderByAscending("noteTitle")
         
         // Return the query object
         return query

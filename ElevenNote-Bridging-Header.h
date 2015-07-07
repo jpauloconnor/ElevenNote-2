@@ -9,3 +9,5 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <Bolts/BFTask.h>
+#import <Parse/PFObject+Subclass.h>
+

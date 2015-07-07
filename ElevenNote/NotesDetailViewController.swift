@@ -10,14 +10,13 @@ import UIKit
 
 class NotesDetailViewController: UIViewController {
    
+    
     // Container to store the view table selected object
-    var currentObject: PFObject?
+    var currentObject : PFObject?
 
     // Some text fields.
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteText: UITextView!
-
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,8 +69,8 @@ class NotesDetailViewController: UIViewController {
         
         if let object = currentObject {
             
-            noteTitle.text = object["noteTitle"] as? String
-            noteText.text = object["noteText"] as? String
+            noteTitle.text = object["noteTitle"] as! String
+            noteText.text = object["noteText"] as! String
         }
     }
 

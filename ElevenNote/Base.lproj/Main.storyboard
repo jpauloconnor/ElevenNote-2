@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iDQ-CG-h8D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jve-N0-IBr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Notes Table View Controller-->
         <scene sceneID="NPe-UE-HpI">
             <objects>
-                <tableViewController id="yE5-N8-l3x" customClass="NotesTableViewController" customModule="ElevenNote" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NotesTableViewController" id="yE5-N8-l3x" customClass="NotesTableViewController" customModule="ElevenNote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="JeA-QX-d1p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,8 +28,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iRh-fp-czD" id="tVS-c5-tRf">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-jv-OUd">
-                                            <rect key="frame" x="8" y="8" width="32" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-jv-OUd">
+                                            <rect key="frame" x="8" y="8" width="0.0" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="UJG-vW-60q"/>
                                             </constraints>
@@ -58,6 +58,7 @@
                                 <connections>
                                     <outlet property="customNoteText" destination="ANd-MH-EDU" id="1i8-Ma-sR6"/>
                                     <outlet property="customNoteTitle" destination="O1u-jv-OUd" id="fob-0I-BpB"/>
+                                    <segue destination="CzI-aW-cxt" kind="push" identifier="editNoteSegue" id="HUi-ES-Fwh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,7 +76,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PLk-1C-XkD">
                             <connections>
                                 <action selector="addNote:" destination="yE5-N8-l3x" id="H4V-nv-ruf"/>
-                                <segue destination="CzI-aW-cxt" kind="push" id="7qj-tG-N4Y"/>
+                                <segue destination="CzI-aW-cxt" kind="push" identifier="notesToDetail" id="7qj-tG-N4Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -213,7 +214,6 @@
                         <outlet property="emailAddress" destination="0N7-Sa-dpK" id="NbH-BO-3Nh"/>
                         <outlet property="password" destination="M4Z-K6-o4F" id="dAr-qN-yKi"/>
                         <outlet property="topMessage" destination="Sed-cI-F45" id="Liz-Dp-iBp"/>
-                        <segue destination="jve-N0-IBr" kind="modal" identifier="signInSegue" id="L87-t4-YEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66Q-cO-WkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,4 +243,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="HUi-ES-Fwh"/>
+    </inferredMetricsTieBreakers>
 </document>

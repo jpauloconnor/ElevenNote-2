@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 let NoteStoreInstance = Note()
 
 class Note: PFObject, PFSubclassing {
