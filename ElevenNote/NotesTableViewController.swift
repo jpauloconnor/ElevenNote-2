@@ -8,17 +8,23 @@
 
 import UIKit
 
-class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
+class NotesTableViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate{
+ 
+    var noteObjects: NSMutableArray! = NSMutableArray()
     
-    // Sign the user out
-    @IBAction func signOut(sender: AnyObject) {
-    
-        PFUser.logOut()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("NotesTableViewController") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
+    
+//    // Sign the user out
+//    @IBAction func signOut(sender: AnyObject) {
+//    
+//        PFUser.logOut()
+//        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewControllerWithIdentifier("NotesTableViewController") as! UIViewController
+//        self.presentViewController(vc, animated: true, completion: nil)
+//    }
 
     // Add button
     
@@ -31,8 +37,133 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        // If there is no user, present a sign up VC & LogInVC
+
+        if (PFUser.currentUser() == nil) { //no current user
+            var logInViewController = PFLogInViewController()
+            logInViewController.delegate = self
+            var signUpViewController = PFSignUpViewController()
+            signUpViewController.delegate = self
+            logInViewController.signUpController = signUpViewController
+            self.presentViewController(logInViewController, animated: true, completion: nil)
+            
+        } else {
+            self.fetchAllObjectsFromLocalDatastore()
+            self.fetchAllObjects()
+            tableView.reloadData()
+            searchBar.delegate = self
+        }
+        
+    }
+    func fetchAllObjectsFromLocalDatastore() {
+        
+        var query: PFQuery = PFQuery(className: "Note")
+        query.fromLocalDatastore()
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in  //asynchronous request
+            
+            if (error == nil) {
+                var temp: NSArray = (objects as? NSArray!)!
+                //This took forever to figure out.  How do I Fix?  Before it was unwrapping in the console only. Optional("eslkjlkj3")  Getting it like this was an absolute shell game.
+                
+                self.noteObjects = temp.mutableCopy() as! NSMutableArray
+                
+                self.tableView.reloadData()
+                
+                //                //
+                ////
+                ////                if let objects = objects as? [PFObject]{
+                ////                    for object in objects {
+                ////                        println(object.objectId)
+                //                    }
+                //                }
+                //
+                //                self.tableView.reloadData()
+                
+            }else{
+                println (error!.userInfo)
+                
+            }
+        }
+    }
+
+    func fetchAllObjects() {
+        
+        PFObject.unpinAllObjectsInBackgroundWithBlock(nil) //start fresh.
+        var query: PFQuery = PFQuery(className: "Note")
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if (error == nil) {
+                PFObject.pinAllInBackground(objects, block: nil)
+                
+            }else{
+                
+                println(error!.userInfo)
+                
+            }
+        }
+    }
+
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+        
+        if (!username.isEmpty || !password.isEmpty) { //Check and make sure fields are not empty
+            
+            return true //if not empty continue log in
+            
+        }else{
+            
+            return false
+        }
+    }
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        
+        println("Failed to log in")
+    }
     
     
+    func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
+        
+        if let password = info["password"] as? String {
+            
+            return count(password.utf16) >= 8
+            
+        } else {
+            
+            return false
+        }
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        
+        println("Failed to sign up")
+        
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        
+        println("User dismissed sign up")
+        
+    }
+    override func didReceiveMemoryWarning() {
+        
+        super.didReceiveMemoryWarning()
+        
+    }
+
     //Table search bar
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -61,7 +192,7 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
             cell = NoteTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "NotesCell")
         }
         
-        //Extract values from the PFObject to display in the the table cell
+        //Extract values from the PFObject to display in the table cell
         
         if let noteTitle = object?["noteTitle"] as? String {
             cell.customNoteTitle.text = noteTitle
@@ -139,16 +270,6 @@ class NotesTableViewController: PFQueryTableViewController, UISearchBarDelegate{
     }
     
     
-    override func viewDidAppear(animated: Bool) {
-        
-        // Refresh the table to ensure any data changes are displayed
-        tableView.reloadData()
-        
-        // Delegate the search bar to this table view class
-        searchBar.delegate = self
-
-    }
-
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.

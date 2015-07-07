@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9220B01B4B6E95009F84B0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9220AF1B4B6E95009F84B0 /* Social.framework */; };
+		5D9220B21B4B6EA0009F84B0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9220B11B4B6EA0009F84B0 /* Accounts.framework */; };
 		5D96A47D1B4AE22D0081E734 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D96A47C1B4AE22D0081E734 /* Note.swift */; };
 		5DDE8A8D1B48EA4D00B4EAAB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A871B48EA4D00B4EAAB /* Bolts.framework */; };
 		5DDE8A8E1B48EA4D00B4EAAB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDE8A881B48EA4D00B4EAAB /* ParseCrashReporting.framework */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D9220AF1B4B6E95009F84B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		5D9220B11B4B6EA0009F84B0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5D96A47C1B4AE22D0081E734 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		5DDE8A861B48E9F700B4EAAB /* ElevenNote-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ElevenNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		5DDE8A871B48EA4D00B4EAAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9220B21B4B6EA0009F84B0 /* Accounts.framework in Frameworks */,
+				5D9220B01B4B6E95009F84B0 /* Social.framework in Frameworks */,
 				5DDE8AA61B48EAEB00B4EAAB /* libsqlite3.dylib in Frameworks */,
 				5DDE8AA41B48EADE00B4EAAB /* libz.dylib in Frameworks */,
 				5DDE8AA21B48EAD100B4EAAB /* SystemConfiguration.framework in Frameworks */,
@@ -116,6 +122,8 @@
 		5DDE8A851B48E9C000B4EAAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D9220B11B4B6EA0009F84B0 /* Accounts.framework */,
+				5D9220AF1B4B6E95009F84B0 /* Social.framework */,
 				5DDE8AA51B48EAEB00B4EAAB /* libsqlite3.dylib */,
 				5DDE8AA31B48EADE00B4EAAB /* libz.dylib */,
 				5DDE8AA11B48EAD100B4EAAB /* SystemConfiguration.framework */,

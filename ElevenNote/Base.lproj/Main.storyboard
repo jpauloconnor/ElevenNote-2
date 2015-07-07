@@ -68,11 +68,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lzf-99-33A">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="H0m-YT-U3u">
-                            <connections>
-                                <action selector="signOut:" destination="yE5-N8-l3x" id="oLe-T0-3g7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="H0m-YT-U3u"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PLk-1C-XkD">
                             <connections>
                                 <action selector="addNote:" destination="yE5-N8-l3x" id="H4V-nv-ruf"/>
