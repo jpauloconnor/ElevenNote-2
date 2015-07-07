@@ -36,7 +36,7 @@ class NotesDetailViewController: UIViewController {
             
             var searchText = (noteTitle.text + " " + noteText.text + " ").lowercaseString
             updateObject["searchText"] = searchText
-            updateObject.saveEventually()
+            updateObject.saveInBackground()
             
             
         } else {
@@ -55,8 +55,10 @@ class NotesDetailViewController: UIViewController {
             
             updateObject.ACL = PFACL(user: PFUser.currentUser()!)
             
-            //Save the data back to the server in a background task.
-            updateObject.saveEventually()
+//            Save the data back to the server in a background task.
+//            updateObject.saveInBackgroundWithBlock({ (success, error) -> Void in
+//                load
+//            })
             
         }
         //Return to table view.

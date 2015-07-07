@@ -199,15 +199,15 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
             cell = NoteTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "NotesCell")
         }
         
-//        let data = object as! Note
-//        cell.note = data
-//        let dateUpdated = data.updatedAt
-//        var dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//
-//        let dateString = dateFormatter.stringFromDate(dateUpdated!)
-//        
-//        cell.noteDate.text = dateString  //data.NoteDate
+        let data = object as! Note
+        cell.note = data
+        let dateUpdated = data.updatedAt
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        let dateString = dateFormatter.stringFromDate(dateUpdated!)
+        
+        cell.noteDate.text = dateString  //data.NoteDate
         
         //Extract values from the PFObject to display in the table cell
         
@@ -260,7 +260,6 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         
         //Dismiss the keyboard
         searchBar.resignFirstResponder()
-        println("text ended editing")
         // Force reload of table data.
         self.loadObjects()
     }
@@ -269,7 +268,6 @@ class NotesTableViewController: PFQueryTableViewController, PFLogInViewControlle
         
         // Dismiss the keyboard
         searchBar.resignFirstResponder()
-        println("Button clicked")
         // Force reload of table data
         self.loadObjects()
     }
